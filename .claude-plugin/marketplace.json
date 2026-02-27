@@ -1,0 +1,12 @@
+{
+  "name": "nagomi-pubmed-plugin",
+  "description": "Forensic-grade PubMed research tools for Claude Code",
+  "plugins": [
+    {
+      "name": "nagomi",
+      "description": "Search PubMed, synthesize evidence, verify citations, grade article quality — all from Claude Code",
+      "version": "1.0.0",
+      "path": "."
+    }
+  ]
+}
