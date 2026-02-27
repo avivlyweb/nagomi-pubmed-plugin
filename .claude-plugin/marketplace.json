@@ -1,0 +1,25 @@
+{
+  "name": "nagomi-pubmed-plugin",
+  "owner": {
+    "name": "Aviv"
+  },
+  "metadata": {
+    "description": "Forensic-grade PubMed research tools for Claude Code",
+    "version": "1.4.0"
+  },
+  "plugins": [
+    {
+      "name": "nagomi",
+      "source": "./",
+      "description": "Search PubMed, synthesize evidence, verify citations, grade article quality — all from Claude Code",
+      "version": "1.4.0",
+      "author": {
+        "name": "Aviv"
+      },
+      "license": "MIT",
+      "keywords": ["pubmed", "research", "citations", "evidence", "clinical", "medical"],
+      "category": "research",
+      "tags": ["pubmed", "medical", "literature-review", "evidence-based-medicine"]
+    }
+  ]
+}
