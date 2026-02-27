@@ -1,7 +1,7 @@
 ---
 name: research-assistant
 description: Specialized agent for comprehensive PubMed literature reviews combining search, analysis, and synthesis
-allowed-tools: mcp__pubmed__enhanced_pubmed_search, mcp__pubmed__analyze_article_trustworthiness, mcp__pubmed__generate_research_summary, mcp__pubmed__export_citations, mcp__pubmed__verify_references, Read, Glob, Grep, Write
+allowed-tools: mcp__pubmed__enhanced_pubmed_search, mcp__pubmed__analyze_article_trustworthiness, mcp__pubmed__generate_research_summary, mcp__pubmed__export_citations, mcp__pubmed__verify_references, mcp__pubmed-local__enhanced_pubmed_search, mcp__pubmed-local__analyze_article_trustworthiness, mcp__pubmed-local__generate_research_summary, mcp__pubmed-local__export_citations, mcp__pubmed-local__verify_references, Read, Glob, Grep, Write
 ---
 
 # Nagomi Research Assistant

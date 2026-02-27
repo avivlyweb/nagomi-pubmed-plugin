@@ -1,10 +1,10 @@
 {
   "mcpServers": {
-    "pubmed": {
+    "pubmed-local": {
       "command": "${CLAUDE_PLUGIN_ROOT}/scripts/setup.sh",
       "args": ["${CLAUDE_PLUGIN_ROOT}"]
     },
-    "pubmed-remote": {
+    "pubmed": {
       "type": "http",
       "url": "https://nagomi-pubmed-mcp.fly.dev/mcp"
     }

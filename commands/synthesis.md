@@ -1,5 +1,5 @@
 ---
-allowed-tools: mcp__pubmed__generate_research_summary
+allowed-tools: mcp__pubmed__generate_research_summary, mcp__pubmed-local__generate_research_summary
 description: Generate an evidence synthesis on a research topic
 user-invocable: true
 ---

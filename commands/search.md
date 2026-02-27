@@ -1,5 +1,5 @@
 ---
-allowed-tools: mcp__pubmed__enhanced_pubmed_search
+allowed-tools: mcp__pubmed__enhanced_pubmed_search, mcp__pubmed-local__enhanced_pubmed_search
 description: Search PubMed for biomedical literature
 user-invocable: true
 ---

@@ -1,5 +1,5 @@
 ---
-allowed-tools: mcp__pubmed__verify_references
+allowed-tools: mcp__pubmed__verify_references, mcp__pubmed-local__verify_references
 description: Verify citations and references against PubMed
 user-invocable: true
 ---
