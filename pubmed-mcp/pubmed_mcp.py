@@ -9,6 +9,7 @@ and generating research summaries with PICO analysis.
 
 import asyncio
 import json
+import os
 import re
 import sys
 from dataclasses import dataclass, asdict, field
@@ -4249,9 +4250,64 @@ class MCPServer:
             await self.pubmed_client.close()
 
 
-async def main():
+async def run_http(host="0.0.0.0", port=8080):
+    """Run the MCP server over HTTP (for cloud/Cowork deployment)"""
+    try:
+        from aiohttp import web
+    except ImportError:
+        print("Error: aiohttp not installed. Run: pip3 install aiohttp", file=sys.stderr)
+        sys.exit(1)
+
     server = MCPServer()
-    await server.run()
+    print(f"Nagomi forensic server starting on http://{host}:{port}", file=sys.stderr)
+
+    async def handle_mcp(request):
+        try:
+            body = await request.json()
+            response = await server.handle_request(body)
+            if response is not None:
+                return web.json_response(response)
+            return web.json_response({"jsonrpc": "2.0", "id": None, "result": None})
+        except json.JSONDecodeError as e:
+            return web.json_response({
+                "jsonrpc": "2.0", "id": None,
+                "error": {"code": -32700, "message": f"Parse error: {str(e)}"}
+            }, status=400)
+        except Exception as e:
+            return web.json_response({
+                "jsonrpc": "2.0", "id": None,
+                "error": {"code": -32603, "message": str(e)}
+            }, status=500)
+
+    async def handle_health(request):
+        return web.json_response({"status": "ok", "server": "pubmed-research-mcp", "version": "3.0.1"})
+
+    app = web.Application()
+    app.router.add_post("/mcp", handle_mcp)
+    app.router.add_get("/health", handle_health)
+    app.router.add_get("/", handle_health)
+
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, host, port)
+    await site.start()
+    print(f"Nagomi forensic server running on http://{host}:{port}", file=sys.stderr)
+
+    try:
+        await asyncio.Event().wait()
+    finally:
+        await runner.cleanup()
+        await server.pubmed_client.close()
+
+
+async def main():
+    if "--http" in sys.argv or os.environ.get("MCP_TRANSPORT") == "http":
+        port = int(os.environ.get("PORT", "8080"))
+        host = os.environ.get("HOST", "0.0.0.0")
+        await run_http(host, port)
+    else:
+        server = MCPServer()
+        await server.run()
 
 
 if __name__ == "__main__":
