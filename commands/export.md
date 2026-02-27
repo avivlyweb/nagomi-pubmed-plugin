@@ -1,5 +1,5 @@
 ---
-allowed-tools: mcp__pubmed__export_citations, mcp__pubmed-local__export_citations
+allowed-tools: mcp__pubmed__export_citations
 description: Export citations in APA, Vancouver, or BibTeX format
 user-invocable: true
 ---

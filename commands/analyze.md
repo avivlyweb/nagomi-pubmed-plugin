@@ -1,5 +1,5 @@
 ---
-allowed-tools: mcp__pubmed__analyze_article_trustworthiness, mcp__pubmed-local__analyze_article_trustworthiness
+allowed-tools: mcp__pubmed__analyze_article_trustworthiness
 description: Critically appraise an article's quality and trustworthiness
 user-invocable: true
 ---
