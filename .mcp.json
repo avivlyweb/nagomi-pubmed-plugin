@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "pubmed": {
-      "command": "${CLAUDE_PLUGIN_ROOT}/scripts/setup.sh",
-      "args": ["${CLAUDE_PLUGIN_ROOT}"]
+      "command": "${CLAUDE_PLUGIN_ROOT}/pubmed-mcp/venv/bin/python3",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/pubmed-mcp/pubmed_mcp.py"]
     }
   }
 }
