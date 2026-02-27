@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pubmed": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/scripts/setup.sh",
+      "args": ["${CLAUDE_PLUGIN_ROOT}"]
+    }
+  }
+}

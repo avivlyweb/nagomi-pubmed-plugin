@@ -1,0 +1,13 @@
+{
+  "name": "nagomi",
+  "version": "1.0.0",
+  "description": "Forensic-grade PubMed research engine — search, synthesize, verify citations, grade evidence",
+  "author": {
+    "name": "Aviv",
+    "url": "https://physiotherapy.ai"
+  },
+  "homepage": "https://physiotherapy.ai",
+  "repository": "https://github.com/avivlyweb/nagomi-pubmed-plugin",
+  "license": "MIT",
+  "keywords": ["pubmed", "research", "citations", "evidence", "clinical", "medical"]
+}
