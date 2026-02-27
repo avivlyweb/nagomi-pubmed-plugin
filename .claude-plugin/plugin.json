@@ -1,6 +1,5 @@
 {
   "name": "nagomi",
-  "version": "1.0.0",
   "description": "Forensic-grade PubMed research engine — search, synthesize, verify citations, grade evidence",
   "author": {
     "name": "Aviv"

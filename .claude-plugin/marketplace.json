@@ -10,8 +10,9 @@
   "plugins": [
     {
       "name": "nagomi",
-      "source": ".",
+      "source": "./",
       "description": "Search PubMed, synthesize evidence, verify citations, grade article quality — all from Claude Code",
+      "version": "1.0.0",
       "author": {
         "name": "Aviv"
       },
